@@ -1,0 +1,31 @@
+import tkinter as tk # Importa la librería para crear la interfaz gráfica
+from tkinter import messagebox # Importa el módulo para mostrar alertas al usuario
+
+class ProyectoZharick: # Define la clase principal con el nombre solicitado
+    def __init__(self, ventana): # Método que inicializa la ventana del programa
+        self.ventana = ventana # Guarda la ventana en una variable interna
+        self.ventana.title("Fase 4 - Programación - Zharick") # Título oficial del proyecto
+        self.ventana.geometry("400x300") # Define el tamaño de la ventana de la aplicación
+        
+        self.label = tk.Label(ventana, text="Registro de Actividad") # Texto de encabezado
+        self.label.pack(pady=20) # Coloca el encabezado con un margen superior
+        
+        self.entrada = tk.Entry(ventana) # Crea el campo para que Zharick ingrese datos
+        self.entrada.pack(pady=10) # Coloca el campo de entrada en la interfaz
+        
+        # Crea el botón que ejecuta la validación del sistema
+        self.boton = tk.Button(ventana, text="Confirmar Avance", command=self.validar) 
+        self.boton.pack(pady=20) # Posiciona el botón en la ventana principal
+
+    def validar(self): # Función obligatoria para validar el funcionamiento
+        dato = self.entrada.get() # Captura lo que se escribió en el campo de texto
+        if dato: # Verifica de forma secuencial si el campo tiene contenido
+            messagebox.showinfo("Validación", f"Registro '{dato}' guardado con éxito") # Éxito
+        else: # En caso de que el campo esté vacío, aplica la corrección
+            messagebox.showwarning("Atención", "Por favor, ingresa un dato válido") # Alerta
+
+if __name__ == "__main__": # Punto de inicio para la ejecución del programa
+    raiz = tk.Tk() # Inicializa la raíz de la interfaz de usuario
+    app = ProyectoZharick(raiz) # Crea la instancia del proyecto de Zharick
+    raiz.mainloop() # Mantiene la ventana abierta para interactuar con ella
+    
