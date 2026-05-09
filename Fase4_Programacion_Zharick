@@ -28,4 +28,3 @@ if __name__ == "__main__": # Punto de inicio para la ejecución del programa
     raiz = tk.Tk() # Inicializa la raíz de la interfaz de usuario
     app = ProyectoZharick(raiz) # Crea la instancia del proyecto de Zharick
     raiz.mainloop() # Mantiene la ventana abierta para interactuar con ella
-    .
